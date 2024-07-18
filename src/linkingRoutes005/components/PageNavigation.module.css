@@ -1,0 +1,40 @@
+/* this is now the css module for the PageNavigation component */
+
+.nav {
+	background-color: aqua;
+	width: 50%;
+	padding: 10px;
+}
+/* we must define class name,
+	we should not directyl use element selector like ul,
+	cz then all the ul element present in the entire application gets selected 
+*/
+.nav ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/* how to create a global class in a css module. the global class "test" would not get a random id attached to it */
+:global(.test) {
+	background-color: rebeccapurple;
+}
+
+/* note that the NavLink of the RRD provides us with an "active" to determine whether a particular link is active or not, it does so by adding a className "active" to the target element
+now, we know that in css modules, the defined classes gets a random stringID attached to it
+which is why if we try to target .active class here, it wont work
+cz css module will add a randomID to the .active 
+*/
+
+/* .nav .active {
+	background-color: burlywood;
+	font-weight: 600;
+} */
+
+/* one easy solution to this is that we use the global function here */
+.nav :global(.active) {
+	background-color: burlywood;
+	font-weight: 600;
+	padding: 10px;
+}
