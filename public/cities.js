@@ -9,7 +9,7 @@ export const CITIES = [
 		notes: "My favorite city so far!",
 		position: {
 			lat: 38.727881642324164,
-			lng: -9.140900099907554,
+			long: -9.140900099907554,
 		},
 		id: 73930385,
 	},
@@ -21,7 +21,7 @@ export const CITIES = [
 		notes: "",
 		position: {
 			lat: 40.46635901755316,
-			lng: -3.7133789062500004,
+			long: -3.7133789062500004,
 		},
 		id: 17806751,
 	},
@@ -33,7 +33,7 @@ export const CITIES = [
 		notes: "Amazing 😃",
 		position: {
 			lat: 52.53586782505711,
-			lng: 13.376933665713324,
+			long: 13.376933665713324,
 		},
 		id: 98443197,
 	},

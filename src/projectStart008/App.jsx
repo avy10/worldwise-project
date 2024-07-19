@@ -12,7 +12,7 @@ import Homepage from "./pages/HomePage.jsx";
 import Login from "./pages/Login.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
 import CityList from "./components/CityCountriesList/CityList.jsx";
-
+import City from "./components/City/City.jsx";
 import CountryList from "./components/CityCountriesList/CountryList/CountryList.jsx";
 
 function App() {
@@ -48,6 +48,10 @@ function App() {
 						element={
 							<CityList cities={cities} isLoading={isLoading} />
 						}
+					/>
+					<Route
+						path="cities/:id"
+						element={<City cities={cities} isLoading={isLoading} />}
 					/>
 					<Route
 						path="countries"
