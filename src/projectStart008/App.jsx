@@ -1,4 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { CITIES } from "../../public/cities.js";
+
 import Product from "./pages/Product";
 import PageNotFound from "./pages/PageNotFound";
 import PageNavigation from "./components/Navigation/PageNavigation/PageNavigation.jsx";
@@ -7,10 +11,9 @@ import AppLayout from "./pages/AppLayout";
 import Homepage from "./pages/HomePage.jsx";
 import Login from "./pages/Login.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
-import CityList from "./components/CityList/CityList.jsx";
-import { useEffect, useState } from "react";
+import CityList from "./components/CityCountriesList/CityList.jsx";
 
-import { CITIES } from "../../public/cities.js";
+import CountryList from "./components/CityCountriesList/CountryList/CountryList.jsx";
 
 function App() {
 	const [cities, setCities] = useState([]);
@@ -40,10 +43,20 @@ function App() {
 							<CityList cities={cities} isLoading={isLoading} />
 						}
 					/>
-					<Route path="cities" element={<CityList />} />
+					<Route
+						path="cities"
+						element={
+							<CityList cities={cities} isLoading={isLoading} />
+						}
+					/>
 					<Route
 						path="countries"
-						element={<p>LIST OF COUNTRIES</p>}
+						element={
+							<CountryList
+								cities={cities}
+								isLoading={isLoading}
+							/>
+						}
 					/>
 					<Route path="form" element={<p>FORM</p>} />
 				</Route>

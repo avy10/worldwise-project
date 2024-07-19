@@ -1,3 +1,5 @@
+// export const CITIES = [];
+
 export const CITIES = [
 	{
 		cityName: "Lisbon",
